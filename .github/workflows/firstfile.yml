@@ -9,8 +9,8 @@ jobs:
     first_workflow:
         runs-on: ubuntu-latest
         steps:
-            -name: "Print First workflow created"
-             run: echo "First Workflow Created"
+            - name: "Print First workflow created"
+              run: echo "First Workflow Created"
             
-            -name: "Print Second Workflow"
-             run: echo "Second Step of Job"
+            - name: "Print Second Workflow"
+              run: echo "Second Step of Job"
