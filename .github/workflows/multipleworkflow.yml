@@ -6,9 +6,9 @@ on:
             - main
             
     pull_request:
-        # branches:
-        #     - main
-        #     - test
+        branches:
+            - main
+    
 
 jobs:
     on-push:
