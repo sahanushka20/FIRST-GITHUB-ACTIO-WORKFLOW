@@ -1,0 +1,31 @@
+name: "Multiple-workflow"
+
+on:
+    push:
+        branches:
+            - main
+            
+    pull_request:
+        # branches:
+        #     - main
+        #     - test
+
+jobs:
+    on-push:
+        if: github.event_name == 'push'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Print Multiple workflow created"
+              run: echo "Multiple Workflow Created"
+            
+            - name: "Print Second Step of Job"
+              run: echo "Second Step of Job"
+    on-pull-request:
+        if: github.event_name == 'pull_request'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Print Pull Request workflow created"
+              run: echo "Pull Request Workflow Created"
+            
+            - name: "Print Second Step of Job"
+              run: echo "Second Step of Job"
