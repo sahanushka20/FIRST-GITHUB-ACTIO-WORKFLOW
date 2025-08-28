@@ -4,7 +4,9 @@ on:
     push:
         branches:
             - main
-            
+    schedule:
+      - cron: "0 12 * * 6,0"   # At 12:00 PM, Saturday and Sunday
+                  
     pull_request:
         branches:
             - main
@@ -29,3 +31,12 @@ jobs:
             
             - name: "Print Second Step of Job"
               run: echo "Second Step of Job"
+    on-schedule:
+        if: github.event_name == 'schedule'
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Print Scheduled workflow created"
+              run: echo "Scheduled Workflow Created"
+            
+            - name: "Print Second Step of Job"
+              run: echo "Successfully ran on scheduled time"
